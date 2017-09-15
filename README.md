@@ -19,38 +19,40 @@ Then I came across this [great post][1] on [Back Alley Coder][3] about using ~~[
 
 The libraries on this repository are just a ready-to-use implementation of the above, one pure javascript and the other a jQuery plugin version (just for convenience).
 
+## Fork
+
+This fork packages it as a common.js module.
+
+Install:
+
+```sh
+npm install --save add-resize-listener
+```
+
+Usage:
+
+```js
+const addResizeListener = require('add-resize-listener');
+
+const unsub = addResizeListener(element, () => {
+  console.log(`Resized`);
+});
+
+unsub();
+
+// alternative, uglier
+const addResizeListener = require('add-resize-listener');
+const { removeResizeListener } = addResizeListener;
+const handler = () => {
+  console.log(`Resized`);
+}
+addResizeListener(element, handler);
+removeResizeListener(element, handler);
+```
+
 Libraries
 =========
 
-Pure Javascript library usage
------------------------------
-
-```html
-<script type="text/javascript" src="detect-element-resize.js"></script>
-<script type="text/javascript">
-  var resizeElement = document.getElementById('resizeElement'),
-      resizeCallback = function() {
-          /* do something */
-      };
-  addResizeListener(resizeElement, resizeCallback);
-  removeResizeListener(resizeElement, resizeCallback);
-</script>
-```
-
-jQuery plugin library usage
----------------------------
-```html
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="jquery.resize.js"></script>
-<script type="text/javascript">
-  var myFunc = function() {
-    /* do something */
-  };
-  
-  $('#resizeElement').resize(myFunc);
-  $('#resizeElement').removeResize(myFunc);
-</script>
-```
 
 Compatibility
 -------------
