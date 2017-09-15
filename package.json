@@ -1,8 +1,8 @@
 {
-  "name": "javascript-detect-element-resize",
+  "name": "add-resize-listener",
   "version": "0.5.3",
   "description": "A Cross-Browser, Event-based, Element Resize Detection",
-  "main": "detect-element-resize.js",
+  "main": "index.js",
   "directories": {
     "test": "tests"
   },
@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/sdecima/javascript-detect-element-resize",
   "devDependencies": {
-    "browserify": "^6.3.3"
+    "browserify": "^6.3.3",
+    "jest": "^21.1.0"
   }
 }
