@@ -1,4 +1,4 @@
-javascript-detect-element-resize
+add-element-resize (fork of javascript-detect-element-resize)
 ================================
 
 A Cross-Browser, Event-based, Element Resize Detection.
