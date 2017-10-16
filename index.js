@@ -127,6 +127,15 @@ function createStyles() {
 }
 
 var addResizeListener = function(element, fn) {
+  if (!element) {
+    throw new TypeError('Expected first argument to be provided but was ' + element);
+  }
+  if (!element instanceof HTMLElement) {
+    throw new TypeError('Expected first argument to be a HTMLElement but was ' + element.constructor.name);
+  }
+  if (!fn || typeof fn !== 'function') {
+    throw new TypeError('Expected second argument to be a function but got ' + fn);
+  }
   if (attachEvent) element.attachEvent('onresize', fn);
   else {
     if (!element.__resizeTriggers__) {
