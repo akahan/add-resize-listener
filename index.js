@@ -32,7 +32,7 @@ var cancelFrame = (function() {
   };
 })();
 
-resetTriggers = function resetTriggers(element) {
+var resetTriggers = function resetTriggers(element) {
   var triggers = element.__resizeTriggers__,
     expand = triggers.firstElementChild,
     contract = triggers.lastElementChild,
